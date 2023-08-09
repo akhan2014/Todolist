@@ -1,0 +1,33 @@
+## print input to console
+todo = []
+def action():
+  choice = input("Type 1 for add or 2 for delete: ")
+  
+  def add_item():
+    item = input('What do you want to add? ')
+    todo.append(item)
+    print(todo)
+    anything_else()
+  
+  def remove_item(item_index):
+    todo.pop(int(item_index))
+    print(todo)
+    anything_else()
+  
+  if choice == '1': 
+    add_item()
+  elif choice == '2':
+    item_index = input('Type index of Item that you want to remove: ')
+    remove_item(item_index)
+  else:
+    print("not valid entry. Ending Program")
+
+def anything_else():
+  changes = input('Do you want to make another chages to your todo list? (y/n) ')
+  if changes == 'y':
+    action()
+  elif changes == 'n':
+    print('Thank you! Ending Program')
+  else:
+    print('Not Valid input. Ending Program')
+action()
